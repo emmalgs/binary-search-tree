@@ -116,7 +116,10 @@ describe("binarySearchTree", () => {
   });
 
   test('it should remove a leaf node', () => {
-    pbst.remove(1);
-    expect(pbst.search(1)).toEqual(false);
+    let bst = new BST();
+    let rootNode = new BSTNode(36);
+    bst.insertNode(rootNode);
+    bst.remove(36);
+    expect(bst.search(36)).toEqual(false);
   });
 });

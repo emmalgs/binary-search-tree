@@ -51,6 +51,15 @@ export default class BST {
   }
 
   remove(value) {
-    return false;
+    if (this.search(value) === false) {
+      return false;
+    } else {
+      if (this.root.data === value) {
+        if (this.root.left === null && this.root.right === null) {
+          this.root = null;
+          return true;
+        }
+      }
+    }
   }
 }
