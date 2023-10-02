@@ -11,7 +11,7 @@ describe("binarySearchTree", () => {
     pbst.insertNode(new BSTNode(1));
     pbst.insertNode(new BSTNode(3));
     pbst.insertNode(new BSTNode(5));
-    pbst.insertNode(new BSTNode(7));  
+    pbst.insertNode(new BSTNode(7));
   });
 
   test("should initialize a binary search tree with a root of null", () => {
@@ -87,7 +87,36 @@ describe("binarySearchTree", () => {
     });
   });
 
-  test('it should return true if the root node is equal to 4', () => {
+  test("it should return true if the root node is equal to 4", () => {
     expect(pbst.search(4)).toEqual(true);
+  });
+
+  test("it should return false if the root node is not equal to 31", () => {
+    expect(pbst.search(31)).toEqual(false);
+  });
+
+  test("it should return true if the first child node on the left is equal to 2", () => {
+    expect(pbst.search(2)).toEqual(true);
+  });
+
+  test("it should return if the value 0 is not in the tree", () => {
+    expect(pbst.search(0)).toEqual(false);
+  });
+
+  test('it should return true if the tree includes 7', () => {
+    expect(pbst.search(7)).toEqual(true);
+  });
+
+  test('it should return true if the tree includes 5', () => {
+    expect(pbst.search(5)).toEqual(true);
+  });
+
+  test('it should return false if the node to be removed doesn\'t exist', () => {
+    expect(pbst.remove(0)).toEqual(false);
+  });
+
+  test('it should remove a leaf node', () => {
+    pbst.remove(1);
+    expect(pbst.search(1)).toEqual(false);
   });
 });
